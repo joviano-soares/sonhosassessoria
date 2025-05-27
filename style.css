@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+background-color: white;
+}
+
+.interface{
+    max-width: 1280px;
+    margin:0 auto;
+    padding: 0 4%;    
+}
+
+/*ESTILO DO CABEÇALHO*/
+
+header{
+    width:100%;
+    z-index:999999999999999;
+    padding: 10px 0;
+}
+
+header .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logotipo img{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+}
+
+header nav.menu ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+nav.menu ul li a{
+    color:#14374d;;
+    text-decoration: none;    
+}
+
+nav.menu ul li :hover{
+    color:#cf9c7b;
+    text-decoration: none;
+    border-bottom: 3px solid #cf9c7b;    
+}
+
+.inicio{
+    color:#cf9c7b;
+    border-bottom: 3px solid #cf9c7b;
+}
+
+/* Estilo do slider */
+
+.slider{
+    height:100vh;
+    position:relative;    
+}
+
+.slider .slider-container .slider-box{
+    position:absolute;
+    inset:0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.slider .slider-box img{
+    width:100%;
+    height:100vh;
+    object-fit: cover;    
+}
+
+.slider .slider-box::after{
+content:'';
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+}
+
+.slider .slider-box .texto-slider{
+    position: absolute;
+    left: 10%;
+    top:30%;
+    color:#fff;
+    z-index:1;
+    width:80%;
+    max-width:600px;
+}
+
+.slider .slider-box .texto-slider h2{
+    font-size:5rem;
+
+}
+
+.slider .slider-box .texto-slider p{
+     font-size:1rem;
+    margin-top: -20px;
+}    
+
+@keyframes animaTexto{
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        transition: 3s;
+    }
+}   
+
+.slider .slider-box.ativo h2, 
+.slider .slider-box.ativo p{
+    transform: translateY(60px);
+    opacity: 0;
+    animation: animaTexto .5s ease-in-out .7s forwards;
+}
+
+.slider .slider-box.ativo h2{
+    animation-delay: 1s;
+}
+
+.slider-container .slider-box.ativo{
+    opacity:1;
+    z-index:11111;
+}
+
+
+/* Estilo das setas */
+.setas{
+    width:100%;
+    height:100%;
+    padding: 0 4% 4%;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+
+    z-index:22222;
+}
+
+.setas button{
+    width:40px;
+    height:40px;
+    background-color: #a8a7a7;
+    border:0;
+    border-radius: 8px;
+    cursor:pointer;
+    font-size:1.2rem;
+    transition: .2s;
+}
+
+.setas button:hover{
+    background-color:#fff;
+}
+
+   
+    .footer-simple-container {
+        background-color: #14374d;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-simple-container p {
+        margin: 0;
+    }
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+    header .interface {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav.menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .texto-slider{
+       display: none;
+    }
+
+      .footer-simple-container {
+            padding: 15px;
+            font-size: 0.8em;
+        }
+}
+
+@media (max-width: 480px) {
+    header .logotipo img{
+        height: 40px;
+        width: 40px;
+    }
+
+    nav.menu ul li a{
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+

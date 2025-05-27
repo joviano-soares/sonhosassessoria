@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonhos Assessoria de Eventos e Cerimoniais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <style>
+        
+
+body {
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    background-color: rgb(235, 200, 178);
+}
+
+/*ESTILO DO CABEÇALHO*/
+
+header{
+    width:100%;
+    padding: 10px 0;
+    background-color: white;
+}
+
+header .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 80px;
+}
+
+header .logotipo img{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+}
+
+header nav.menu ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+nav.menu ul li a{
+    color:#14374d;
+    text-decoration: none;    
+}
+
+nav.menu ul li :hover{
+    color:#cf9c7b;
+    text-decoration: none; 
+    border-bottom: 3px solid #cf9c7b; 
+     
+}
+
+.inicio{
+    color:#cf9c7b;
+    border-bottom: 3px solid #cf9c7b; 
+}
+
+/*ESTILO DO CONTEÚDO*/
+
+.fundo-container{
+    width:90%;
+    margin:0 auto;
+}
+
+.gallery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.gallery-img{
+    width:450px;
+    height:330px;
+    border-radius: 10px;
+    object-fit: cover;    
+}
+
+.gallery-text {
+    color:#14374d;
+    padding: 40px;  
+    text-align: justify;
+}
+
+.footer-simple-container {
+    background-color: white;
+    color: #14374d;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-simple-container p {
+    margin: 0;
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+        @media (max-width: 768px) {
+            header .interface {
+                flex-direction: column; /* Empilhar elementos do cabeçalho */
+                align-items: center;
+                text-align: center;
+                padding: 10px 5%;
+            }
+
+            header nav.menu ul {
+                flex-direction: column; /* Empilhar itens do menu */
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .gallery-container {
+                flex-direction: column; /* Empilhar imagem e texto */
+                align-items: center;
+            }
+
+            .gallery-img {
+                width: 90%; /* Ocupar quase toda a largura em telas menores */
+                margin-bottom: 20px;
+                margin-left: 0;
+            }
+
+            .gallery-text {
+                width: 90%; /* Ocupar quase toda a largura em telas menores */
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .footer-simple-container {
+            padding: 15px;
+            font-size: 0.8em;
+        }
+}
+        
+
+        @media (max-width: 480px) {
+            header .logotipo img {
+                height: 40px;
+                width: 40px;
+            }
+
+            nav.menu ul li a {
+                font-size: 0.9em; /* Reduzir o tamanho da fonte em telas muito pequenas */
+            }
+
+            .gallery-text {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+        }
+
+        @keyframes animaTexto{
+    100%{        
+        transform: translateY(0);        
+        opacity: 1;
+        transition: 3s;        
+    }
+    
+}   
+
+.fundo-container{
+    transform: translateY(60px);
+    opacity: 0;
+    animation: animaTexto .5s ease-in-out .7s forwards;
+}
+
+    </style>
+        <header>
+            <div class="interface">
+
+                <div class="logotipo">
+                    <img src="imagens/logo.jpg" alt="">
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html" alt="home">Home</a></li>
+                        <li><a href="sobre.html"><span class="inicio" alt="sobre">Sobre</span></a></li>
+                        <li><a href="galeria.html">Fotos</a></li>
+                        <li><a href="depoimentos.html"alt="depoimentos">Depoimentos</a></li>
+                        <li><a href="contato.html" alt="contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+    <div class="fundo-container">
+        <div class="gallery-container">
+             <div>
+                <img src="imagens/36.jpg" alt="" class="gallery-img">
+             </div>
+
+             <div class="gallery-text">
+                <p>A Sonhos Assessoria não apenas organiza eventos, ela conquista realizações. Seu sonho, aquela visão que parece distante, ganha forma e se torna realidade em suas mãos. Nossa especialidade? Transformar desejos em eventos impecáveis, com eficiência  
+                e qualidade que você sente.</p>
+
+                <p>Com anos de experiência no mercado, estamos prontos para elevar o seu evento a um novo patamar.</p>
+
+                <p>Na Sonhos Assessoria, você tem o poder de personalizar cada detalhe. Crie o pacote perfeito para o 
+                tamanho e estilo da sua festa, garantindo que cada investimento traga um impacto real. E não importa a
+                sua visão para o grande dia, nossa equipe é flexível e experiente para entregar resultados incríveis em 
+                qualquer estilo de casamento.</p>
+
+                <p>Estamos no coração do Rio de Janeiro, prontos para fazer acontecer. Se a nossa proposta te inspirou 
+                e você quer saber mais sobre como podemos concretizar seus planos, é fácil: Estamos porntos para responder rapidamente e apresentar uma proposta sob medida para você.</p>
+                
+                <p>Deixe a Sonhos Assessoria transformar seus planos em uma celebração memorável e vibrante!</p></div>          
+            
+        </div>
+
+    </div>
+
+        <footer>
+    <div class="footer-simple-container">
+        <p>&copy; 2025 Sonhos Assessoria de Eventos e Cerimoniais. Todos os direitos reservados.</p>
+
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

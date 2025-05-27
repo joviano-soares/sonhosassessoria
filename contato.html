@@ -135,7 +135,44 @@ nav.menu ul li :hover{
     .footer-simple-container p {
         margin: 0;
     }
+        /*RESPONSIVIDADE*/
 
+@media (max-width: 768px) {
+    header .interface {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav.menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .texto-slider{
+       display: none;
+    }
+
+      .footer-simple-container {
+            padding: 15px;
+            font-size: 0.8em;
+        }
+}
+
+@media (max-width: 480px) {
+    header .logotipo img{
+        height: 40px;
+        width: 40px;
+    }
+
+    nav.menu ul li a{
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
 
     </style>
         <header>

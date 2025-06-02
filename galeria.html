@@ -4,94 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonhos Assessoria de Eventos e Cerimoniais</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="galeria.css">
+   <link rel="stylesheet" href="galeria.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-        <header>
-            <div class="interface">
+    <header>
+        <div class="interface">
+            <div class="logotipo">
+                <img src="imagens/logo2.png" alt="Logotipo Sonhos Assessoria">
+            </div>
 
-                <div class="logotipo">
-                    <img src="logo.jpg" alt="">
+            <div class="btn-abrir-menu" id="btn-menu">
+                 <i class="bi bi-list"></i>
                 </div>
 
-                <nav class="menu">
-                    <ul>
-                        <li><a href="index.html" alt="home">Home</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="galeria.html"><span class="inicio" alt="fotos">Fotos</span></a></li>
-                        <li><a href="depoimentos.html">Depoimentos</a></li>
-                        <li><a href="contato.html" alt="contato">Contato</a></li>
-                    </ul>
-                </nav>
+            <nav class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar-menu">
+                    <i class="bi bi-x-lg"></i>
+                 </div>
+                <ul>
+                    <li><a href="index.html" alt="home">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="galeria.html"><span class="fotos">Fotos</span></a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="contato.html" alt="contato">Contato</a></li>
+                </ul>
+            </nav>
 
-            </div>
+            <nav class="menu-desktop"> <ul>
+                    <li><a href="index.html" alt="home">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="galeria.html"><span class="fotos">Fotos</span></a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="contato.html" alt="contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div>
     </header>
+
     <div class="fundo-container">
         <div class="gallery-container">
-                <h2 class="gallery-title text"></h2>
-          
-            <div class="image-grid">
+             <div class="image-grid">
                 <div class="image-item">
-                    <img src="23.jpg" alt="">                
+                    <img src="imagens/23.jpg" alt="Imagem 1"> 
                 </div>
                 <div class="image-item">
-                    <img src="25.jpg" alt="">                
+                    <img src="imagens/25.jpg" alt="Imagem 2"> 
                 </div>
                 <div class="image-item">
-                    <img src="21.jpg" alt="">                
+                    <img src="imagens/21.jpg" alt="Imagem 3"> 
                 </div>
                 <div class="image-item">
-                    <img src="26.jpg" alt="">                
+                    <img src="imagens/26.jpg" alt="Imagem 4"> 
                 </div>
                 <div class="image-item">
-                    <img src="27.jpg" alt="">                
+                    <img src="imagens/27.jpg" alt="Imagem 5"> 
                 </div>
                 <div class="image-item">
-                    <img src="28.jpg" alt="">                
+                    <img src="imagens/28.jpg" alt="Imagem 6"> 
                 </div>
                 <div class="image-item">
-                    <img src="29.jpg" alt="">                
+                    <img src="imagens/29.jpg" alt="Imagem 7"> 
                 </div>
                 <div class="image-item">
-                    <img src="30.jpg" alt="">                
+                    <img src="imagens/30.jpg" alt="Imagem 8"> 
                 </div>
                 <div class="image-item">
-                    <img src="31.jpg" alt="">                
+                    <img src="imagens/31.jpg" alt="Imagem 9"> 
                 </div>
                 <div class="image-item">
-                    <img src="32.jpg" alt="">                
+                    <img src="imagens/32.jpg" alt="Imagem 10"> 
                 </div>
                 <div class="image-item">
-                <img src="33.jpg" alt="">                
+                    <img src="imagens/33.jpg" alt="Imagem 11"> 
                 </div>
                 <div class="image-item">
-                    <img src="34.jpg" alt="">
+                    <img src="imagens/34.jpg" alt="Imagem 12">
                 </div>
                 <div class="image-item">
-                    <img src="18.jpg" alt="">
+                    <img src="imagens/18.jpg" alt="Imagem 13">
                 </div>
                 <div class="image-item">
-                    <img src="19.jpg" alt="">
+                    <img src="imagens/19.jpg" alt="Imagem 14">
                 </div>
                 <div class="image-item">
-                    <img src="20.jpg" alt="">
+                    <img src="imagens/20.jpg" alt="Imagem 15">
                 </div>
                 <div class="image-item">
-                    <img src="35.jpg" alt="">
+                    <img src="imagens/35.jpg" alt="Imagem 16">
                 </div>
                 <div class="image-item">
-                    <img src="37.jpg" alt="">
+                    <img src="imagens/37.jpg" alt="Imagem 17">
                 </div>
                 <div class="image-item">
-                    <img src="38.jpg" alt="">
+                    <img src="imagens/38.jpg" alt="Imagem 18">
                 </div>
             </div>
-    </div>
-
+        </div>
     </div>
 
     <div class="modal">
@@ -101,13 +115,10 @@
 
     <script src="galeria.js"></script>
 
-            <footer>
-    <div class="footer-simple-container">
-        <p>&copy; 2025 Sonhos Assessoria de Eventos e Cerimoniais. Todos os direitos reservados.</p>
-
+    <footer>
+        <div class="footer-simple-container">
+            <p>&copy; 2025 Sonhos Assessoria de Eventos e Cerimoniais. Todos os direitos reservados.</p>
         </div>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>

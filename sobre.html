@@ -4,146 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonhos Assessoria de Eventos e Cerimoniais</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        
+
+        body {
+            background-color: rgb(235, 200, 178);
+        }
+
+        /*ESTILO DO CABEÇALHO*/
+        header{
+            width:100%;
+            z-index:999999999999999;
+            padding: 10px 0;
+            position: relative; /* Adicionado para posicionar o menu mobile */
+            background-color: white;
+        }
+
+        header .interface{
+            max-width: 1280px; /* Adicionado para centralizar o conteúdo do cabeçalho */
+            margin: 0 auto; /* Adicionado para centralizar o conteúdo do cabeçalho */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2%; /* Adicionado para dar um respiro nas laterais */
+        }
+
+        header .logotipo img{
+            width:7rem;
+        }
+
+        /* Estilo do Menu Desktop */
+        header nav.menu-desktop ul{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav.menu-desktop ul li a{
+            color:#14374d;
+            text-decoration: none;
+        }
+
+        nav.menu-desktop ul li :hover{
+            color:#cf9c7b;
+        }
+
+        .sobre{
+            color:#cf9c7b;
+        }
+
+/* Estilo do Menu Mobile */
+.btn-abrir-menu {
+    display: none; /* Oculto por padrão, só aparece em mobile */
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:#14374d;    
 }
 
-body {
-    background-color: rgb(235, 200, 178);
+.menu-mobile {
+    background-color:#14374d;
+    color: #f7f7f7;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0%; /* Começa fechado */
+    height: 100vh;
+    z-index: 99999;
+    transition: .5s;
+    overflow: hidden; /* Garante que o conteúdo não vaze enquanto fechado */
 }
 
-/*ESTILO DO CABEÇALHO*/
 
-header{
-    width:100%;
-    padding: 10px 0;
-    background-color: white;
+.menu-mobile.abrir-menu {
+    width: 70%; /* Largura quando aberto */
 }
 
-header .interface{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 100px;
-    padding-right: 80px;
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
 }
 
-header .logotipo img{
-    height:50px;
-    width:50px;
-    border-radius: 50%;
+.menu-mobile .btn-fechar-menu {
+    color: white;
+    font-size: 2.5rem;
+    padding: 20px 5%;
+    cursor: pointer;
+    text-align: right;
 }
 
-header nav.menu ul{
-    display: flex;
-    align-items: center;
-    gap: 40px;
+.menu-mobile nav ul {
     list-style: none;
-}
-
-nav.menu ul li a{
-    color:#14374d;
-    text-decoration: none;    
-}
-
-nav.menu ul li :hover{
-    color:#cf9c7b;
-    text-decoration: none; 
-    border-bottom: 3px solid #cf9c7b; 
-     
-}
-
-.inicio{
-    color:#cf9c7b;
-    border-bottom: 3px solid #cf9c7b; 
-}
-
-/*ESTILO DO CONTEÚDO*/
-
-.fundo-container{
-    width:90%;
-    margin:0 auto;
-}
-
-.gallery-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-}
-
-.gallery-img{
-    width:450px;
-    height:330px;
-    border-radius: 10px;
-    object-fit: cover;    
-}
-
-.gallery-text {
-    color:#14374d;
-    padding: 40px;  
-    text-align: justify;
-}
-
-.footer-simple-container {
-    background-color: white;
-    color: #14374d;
-    padding: 20px;
     text-align: center;
-    font-size: 0.9em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 22px;
 }
 
-.footer-simple-container p {
-    margin: 0;
+nav ul li {
+    padding: 15px 0;
 }
 
-/*ANIMAÇÃO*/
-
-@keyframes animaTexto{
-    100%{        
-        transform: translateY(0);        
-        opacity: 1;
-        transition: 3s;        
-    }
-    
-}  
-
-.fundo-container{
-    transform: translateY(60px);
-    opacity: 0;
-    animation: animaTexto .5s ease-in-out .7s forwards;
+nav ul li a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
 }
 
+nav ul li a:hover {
+    color: #cf9c7b;
+}
 
-/*RESPONSIVIDADE*/
+.overlay-menu {
+    background-color: #000000a6;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none; /* Oculto por padrão */
+}
 
+        /*ESTILO DO CONTEÚDO*/
+        .fundo-container{
+            width:90%;
+            margin:0 auto;
+        }
+
+        .gallery-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            padding: 20px 0; /* Adicionado para espaçamento */
+        }
+
+        .gallery-img{
+            width:450px;
+            height:330px;
+            border-radius: 10px;
+            object-fit: cover;      
+        }
+
+        .gallery-text {
+            color:#14374d;
+            padding: 40px;    
+            text-align: justify;
+        }
+
+        .footer-simple-container {
+            background-color: white;
+            color: #14374d;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .footer-simple-container p {
+            margin: 0;
+        }
+
+        /*ANIMAÇÃO*/
+        @keyframes animaTexto{
+            100%{           
+                transform: translateY(0);           
+                opacity: 1;
+                transition: 3s;         
+            }
+        } 
+
+        .fundo-container{
+            transform: translateY(60px);
+            opacity: 0;
+            animation: animaTexto .5s ease-in-out .7s forwards;
+        }
+
+        /*RESPONSIVIDADE*/
         @media (max-width: 768px) {
             header .interface {
-                flex-direction: column; /* Empilhar elementos do cabeçalho */
-                align-items: center;
-                text-align: center;
+                flex-direction: row; /* Manter logo e botão na mesma linha */
+                justify-content: space-between; /* Espaço entre eles */
                 padding: 10px 5%;
             }
 
-            header nav.menu ul {
-                flex-direction: column; /* Empilhar itens do menu */
-                gap: 10px;
-                margin-top: 10px;
+            header nav.menu-desktop {
+                display: none; /* Oculta o menu desktop em telas menores */
+            }
+
+            .btn-abrir-menu {
+                display: block; /* Mostra o botão do menu hambúrguer */
             }
 
             .gallery-container {
@@ -161,22 +223,12 @@ nav.menu ul li :hover{
                 width: 90%; /* Ocupar quase toda a largura em telas menores */
                 margin-left: 0;
                 padding: 20px;
-            }
-
-            .footer-simple-container {
-display:none;
+            }       
         }
-}
-        
-
+                
         @media (max-width: 480px) {
             header .logotipo img {
-                height: 40px;
-                width: 40px;
-            }
-
-            nav.menu ul li a {
-                font-size: 0.9em; /* Reduzir o tamanho da fonte em telas muito pequenas */
+                width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
             }
 
             .gallery-text {
@@ -185,59 +237,90 @@ display:none;
             }
         }
     </style>
-        <header>
-            <div class="interface">
+</head>
+<body>
 
-                <div class="logotipo">
-                    <img src="logo.jpg" alt="">
-                </div>
-
-                <nav class="menu">
-                    <ul>
-                        <li><a href="index.html" alt="home">Home</a></li>
-                        <li><a href="sobre.html"><span class="inicio" alt="sobre">Sobre</span></a></li>
-                        <li><a href="galeria.html">Fotos</a></li>
-                        <li><a href="depoimentos.html"alt="depoimentos">Depoimentos</a></li>
-                        <li><a href="contato.html" alt="contato">Contato</a></li>
-                    </ul>
-                </nav>
-
+    <header>
+        <div class="interface">
+            <div class="logotipo">
+                <img src="imagens/logo2.png" alt="Logotipo Sonhos Assessoria">
             </div>
-        </header>
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <nav class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar-menu">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html"><span class="sobre">Sobre</span></a></li>
+                    <li><a href="galeria.html">Fotos</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html"><span class="sobre">Sobre</span></a></li>
+                    <li><a href="galeria.html">Fotos</a></li>
+                    <li><a href="depoimentos.html">Depoimentos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div>
+    </header>
+
     <div class="fundo-container">
         <div class="gallery-container">
-             <div>
-                <img src="36.jpg" alt="" class="gallery-img">
-             </div>
+            <div>
+                <img src="imagens/36.jpg" alt="Imagem de Evento" class="gallery-img">
+            </div>
 
-             <div class="gallery-text">
-                <p>A Sonhos Assessoria não apenas organiza eventos, ela conquista realizações. Seu sonho, aquela visão que parece distante, ganha forma e se torna realidade em suas mãos. Nossa especialidade? Transformar desejos em eventos impecáveis, com eficiência  
-                e qualidade que você sente.</p>
-
+            <div class="gallery-text">
+                <p>A Sonhos Assessoria não apenas organiza eventos, ela conquista realizações. Seu sonho, aquela visão que parece distante, ganha forma e se torna realidade em suas mãos. Nossa especialidade? Transformar desejos em eventos impecáveis, com eficiência e qualidade que você sente.</p>
                 <p>Com anos de experiência no mercado, estamos prontos para elevar o seu evento a um novo patamar.</p>
-
-                <p>Na Sonhos Assessoria, você tem o poder de personalizar cada detalhe. Crie o pacote perfeito para o 
-                tamanho e estilo da sua festa, garantindo que cada investimento traga um impacto real. E não importa a
-                sua visão para o grande dia, nossa equipe é flexível e experiente para entregar resultados incríveis.</p>
-
-                <p>Estamos no coração do Rio de Janeiro, prontos para fazer acontecer. Se a nossa proposta te inspirou 
-                e você quer saber mais sobre como podemos concretizar seus planos, é fácil: Estamos porntos para responder rapidamente e apresentar uma proposta sob medida para você.</p>
-                
-                <p>Deixe a Sonhos Assessoria transformar seus planos em uma celebração memorável e vibrante!</p></div>          
-            
-        </div>
-
-    </div>
-
-        <footer>
-    <div class="footer-simple-container">
-        <p>&copy; 2025 Sonhos Assessoria de Eventos e Cerimoniais. Todos os direitos reservados.</p>
-
+                <p>Na Sonhos Assessoria, você tem o poder de personalizar cada detalhe. Crie o pacote perfeito para o tamanho e estilo da sua festa, garantindo que cada investimento traga um impacto real. E não importa a sua visão para o grande dia, nossa equipe é flexível e experiente para entregar resultados incríveis em qualquer estilo.</p>
+                <p>Estamos no coração do Rio de Janeiro, prontos para fazer acontecer. Se a nossa proposta te inspirou e você quer saber mais sobre como podemos concretizar seus planos, é fácil: Estamos prontos para responder rapidamente e apresentar uma proposta sob medida para você.</p>
+                <p>Deixe a Sonhos Assessoria transformar seus planos em uma celebração memorável e vibrante!</p>
+            </div>         
         </div>
     </div>
-        
-</footer>
+    
+    <footer>
+        <div class="footer-simple-container">
+            <p>&copy; 2025 Sonhos Assessoria de Eventos e Cerimoniais. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnMenu = document.getElementById('btn-menu');
+            const menuMobile = document.getElementById('menu-mobile');
+            const btnFecharMenu = document.querySelector('.btn-fechar-menu');
+            const overlayMenu = document.getElementById('overlay-menu');
 
+            btnMenu.addEventListener('click', function() {
+                menuMobile.classList.add('abrir-menu');
+                overlayMenu.style.display = 'block';
+            });
+
+            btnFecharMenu.addEventListener('click', function() {
+                menuMobile.classList.remove('abrir-menu');
+                overlayMenu.style.display = 'none';
+            });
+
+            overlayMenu.addEventListener('click', function() {
+                menuMobile.classList.remove('abrir-menu');
+                overlayMenu.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>

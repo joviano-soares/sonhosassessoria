@@ -1,4 +1,4 @@
-*{
+* {
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -12,7 +12,7 @@ background-color: white;
 .interface{
     max-width: 1280px;
     margin:0 auto;
-    padding: 0 4%;    
+    padding: 0 4%;
 }
 
 /*ESTILO DO CABEÇALHO*/
@@ -21,6 +21,8 @@ header{
     width:100%;
     z-index:999999999999999;
     padding: 10px 0;
+    position: relative; /* Adicionado para posicionar o menu mobile */
+    background-color: white;
 }
 
 header .interface{
@@ -30,39 +32,105 @@ header .interface{
 }
 
 header .logotipo img{
-    height:50px;
-    width:50px;
-    border-radius: 50%;
+width:7rem;
 }
 
-header nav.menu ul{
+/* Estilo do Menu Desktop */
+header nav.menu-desktop ul{
     display: flex;
     align-items: center;
     gap: 40px;
     list-style: none;
 }
 
-nav.menu ul li a{
-    color:#14374d;;
-    text-decoration: none;    
-}
-
-nav.menu ul li :hover{
-    color:#cf9c7b;
+nav.menu-desktop ul li a{
+     color:#14374d;
     text-decoration: none;
-    border-bottom: 3px solid #cf9c7b;    
 }
 
-.inicio{
+nav.menu-desktop ul li :hover{
+   color:#cf9c7b;
+}
+
+.home{
     color:#cf9c7b;
-    border-bottom: 3px solid #cf9c7b;
+}
+
+/* Estilo do Menu Mobile */
+.btn-abrir-menu {
+    display: none; /* Oculto por padrão, só aparece em mobile */
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:#14374d;    
+}
+
+.menu-mobile {
+    background-color:#14374d;
+    color: #f7f7f7;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0%; /* Começa fechado */
+    height: 100vh;
+    z-index: 99999;
+    transition: .5s;
+    overflow: hidden; /* Garante que o conteúdo não vaze enquanto fechado */
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%; /* Largura quando aberto */
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar-menu {
+    color: white;
+    font-size: 2.5rem;
+    padding: 20px 5%;
+    cursor: pointer;
+    text-align: right;
+}
+
+.menu-mobile nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    padding: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    color: #cf9c7b;
+}
+
+.overlay-menu {
+    background-color: #000000a6;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none; /* Oculto por padrão */
 }
 
 /* Estilo do slider */
 
 .slider{
     height:100vh;
-    position:relative;    
+    position:relative;
 }
 
 .slider .slider-container .slider-box{
@@ -75,7 +143,7 @@ nav.menu ul li :hover{
 .slider .slider-box img{
     width:100%;
     height:100vh;
-    object-fit: cover;    
+    object-fit: cover;
 }
 
 .slider .slider-box::after{
@@ -105,7 +173,7 @@ left:0;
 .slider .slider-box .texto-slider p{
      font-size:1rem;
     margin-top: -20px;
-}    
+}
 
 @keyframes animaTexto{
     100%{
@@ -113,9 +181,9 @@ left:0;
         opacity: 1;
         transition: 3s;
     }
-}   
+}
 
-.slider .slider-box.ativo h2, 
+.slider .slider-box.ativo h2,
 .slider .slider-box.ativo p{
     transform: translateY(60px);
     opacity: 0;
@@ -164,10 +232,10 @@ left:0;
     background-color:#fff;
 }
 
-   
+
     .footer-simple-container {
-        background-color: #14374d;
-        color: #fff;
+        background-color: white;
+        color:#14374d;
         padding: 20px;
         text-align: center;
         font-size: 0.9em;
@@ -185,13 +253,17 @@ left:0;
 
 @media (max-width: 768px) {
     header .interface {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Mantém logo e botão de menu lado a lado */
+        align-items: center;
+        justify-content: space-between;
     }
 
-    header nav.menu ul {
-        flex-direction: column;
-        gap: 10px;
+    header nav.menu-desktop {
+        display: none; /* Oculta o menu desktop em telas menores */
+    }
+
+    .btn-abrir-menu {
+        display: block; /* Mostra o botão de hambúrguer */
     }
 
     .image-grid {
@@ -202,8 +274,8 @@ left:0;
        display: none;
     }
 
-      .footer-simple-container {
-            padding: 15px;
+    .footer-simple-container {
+        padding: 15px;
             font-size: 0.8em;
         }
 }
@@ -214,9 +286,5 @@ left:0;
         width: 40px;
     }
 
-    nav.menu ul li a{
-        font-size: 0.9rem;
-        padding: 8px;
-    }
+    /* As regras do menu mobile já se adaptam com a porcentagem de largura */
 }
-

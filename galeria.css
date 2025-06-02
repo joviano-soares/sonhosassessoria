@@ -263,5 +263,9 @@
         font-size: 0.9rem;
         padding: 8px;
     }
+            
+            .image-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+            }
 }
     

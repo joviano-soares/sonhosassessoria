@@ -270,7 +270,7 @@
             }
 
             .image-grid {
-                width:250px;
+                width:500px;
                 height:100px;
                 object-fit:cover;
             }

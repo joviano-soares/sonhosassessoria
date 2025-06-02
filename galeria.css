@@ -270,7 +270,7 @@
             }
 
             .image-grid {
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta colunas para telas menores */
+                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Ajusta colunas para telas menores */
             }
         }
     

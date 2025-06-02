@@ -9,12 +9,6 @@ body{
 background-color: white;
 }
 
-.interface{
-    max-width: 1280px;
-    margin:0 auto;
-    padding: 0 4%;
-}
-
 /*ESTILO DO CABEÇALHO*/
 
 header{
@@ -25,11 +19,14 @@ header{
     background-color: white;
 }
 
-header .interface{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+ header .interface{
+            max-width: 1280px; /* Adicionado para centralizar o conteúdo do cabeçalho */
+            margin: 0 auto; /* Adicionado para centralizar o conteúdo do cabeçalho */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2%; /* Adicionado para dar um respiro nas laterais */
+        }
 
 header .logotipo img{
 width:7rem;
@@ -274,6 +271,8 @@ left:0;
        display: none;
     }
 
+    
+
     .footer-simple-container {
         padding: 15px;
             font-size: 0.8em;
@@ -284,4 +283,7 @@ left:0;
       header .logotipo img{
          width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
         }
+    .setas{
+        display:none;
+    }
 }

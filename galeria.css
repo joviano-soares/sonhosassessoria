@@ -140,8 +140,9 @@
 
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Cria colunas flexíveis de no mínimo 180px */
+            gap: 15px; /* Espaçamento entre as imagens */
+            border-radius:10px;    
         }
 
         .image-item {
@@ -252,7 +253,7 @@
             }
 
             .image-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta colunas para telas menores */
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta colunas para telas menores */
             }
 
        }

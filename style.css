@@ -281,10 +281,7 @@ left:0;
 }
 
 @media (max-width: 480px) {
-    header .logotipo img{
-        height: 40px;
-        width: 40px;
-    }
-
-    /* As regras do menu mobile já se adaptam com a porcentagem de largura */
+      header .logotipo img{
+         width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
+        }
 }

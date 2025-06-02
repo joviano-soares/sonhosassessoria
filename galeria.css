@@ -233,46 +233,35 @@
         }
 
         /* --- RESPONSIVIDADE --- */
-        @media (max-width: 768px) {
-            header .interface {
-                flex-direction: row; /* Manter logo e botão na mesma linha */
-                justify-content: space-between; /* Espaço entre eles */
-                padding: 10px 5%;
-            }
+       @media (max-width: 768px) {
+    header .interface {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            header nav.menu-desktop { /* Oculta o menu desktop em telas menores */
-                display: none; 
-            }
+    header nav.menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-            .btn-abrir-menu { /* Mostra o botão do menu hambúrguer */
-                display: block; 
-            }
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 
-            .gallery-container {
-                padding: 20px;
-            }
+    .gallery-title{
+        font-size: 1.5rem;
+    }
+}
 
-            .image-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta colunas para telas menores */
-            }
+@media (max-width: 480px) {
+    header .logotipo img{
+        height: 40px;
+        width: 40px;
+    }
 
-       }
-
-        @media (max-width: 480px) {
-            header .logotipo img{
-                width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
-            }
-
-
-            .gallery-container {
-                font-size: 0.9rem;
-                padding: 15px;
-            }
-
-            .image-grid {
-                width:1000px;
-                height:100px;
-                object-fit:cover;
-            }
-        }
+    nav.menu ul li a{
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
     

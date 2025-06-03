@@ -271,19 +271,17 @@ left:0;
        display: none;
     }
 
-    
-
     .footer-simple-container {
         padding: 15px;
-            font-size: 0.8em;
+        font-size: 0.8em;
         }
 }
 
 @media (max-width: 480px) {
-      header .logotipo img{
-         width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
+     header .logotipo img{
+        width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
         }
-    .setas{
+     .setas{
         display:none;
-    }
+        }
 }

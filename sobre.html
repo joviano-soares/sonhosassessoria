@@ -169,7 +169,7 @@ nav ul li a:hover {
         font-size: 0.9em;
         bottom:0%;
         width:100%;
-        position:static;
+        position:relative;
     }
 
         /*ANIMAÇÃO*/
@@ -226,6 +226,12 @@ nav ul li a:hover {
                 width: 90%; /* Ocupar quase toda a largura em telas menores */
                 padding: 20px;
             }  
+            .footer-simple-container {
+                bottom:0;
+                width:100%;
+                position:fixed;
+            }
+        }
         
          @media (max-width: 480px) {
             header .logotipo img {

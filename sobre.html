@@ -15,7 +15,7 @@
             box-sizing: border-box;
             font-family: 'Poppins',sans-serif;
         }
-        
+
 
         body {
             background-color: rgb(235, 200, 178);
@@ -69,7 +69,7 @@
     display: none; /* Oculto por padrão, só aparece em mobile */
     font-size: 2.5rem;
     cursor: pointer;
-    color:#14374d;    
+    color:#14374d;
 }
 
 .menu-mobile {
@@ -145,7 +145,7 @@ nav ul li a:hover {
         .gallery-container{
             display: flex;
             justify-content: center;
-            align-items: center;    
+            align-items: center;
             padding: 20px 0; /* Adicionado para espaçamento */
         }
 
@@ -153,12 +153,12 @@ nav ul li a:hover {
             width:450px;
             height:330px;
             border-radius: 10px;
-            object-fit: cover;      
+            object-fit: cover;
         }
 
         .gallery-text {
             color:#14374d;
-            padding: 40px;    
+            padding: 40px;
             text-align: justify;
         }
     .footer-simple-container {
@@ -167,18 +167,17 @@ nav ul li a:hover {
         padding: 20px;
         text-align: center;
         font-size: 0.9em;
-        bottom:0%;
         width:100%;
         }
 
         /*ANIMAÇÃO*/
         @keyframes animaTexto{
-            100%{           
-                transform: translateY(0);           
+            100%{
+                transform: translateY(0);
                 opacity: 1;
-                transition: 3s;         
+                transition: 3s;
             }
-        } 
+        }
 
         .fundo-container{
             transform: translateY(60px);
@@ -192,7 +191,7 @@ nav ul li a:hover {
                 flex-direction: row; /* Manter logo e botão na mesma linha */
                 justify-content: space-between; /* Espaço entre eles */
                 padding: 10px 5%;
-            
+
             }
 
             header nav.menu-desktop {
@@ -224,14 +223,13 @@ nav ul li a:hover {
             .gallery-text {
                 width: 90%; /* Ocupar quase toda a largura em telas menores */
                 padding: 20px;
-            }  
+            }
             .footer-simple-container {
-                bottom:0;
                 width:100%;
-                position:fixed;
+                /* Removed position:fixed for better content flow */
             }
         }
-        
+
          @media (max-width: 480px) {
             header .logotipo img {
                 width: 5rem; /* Ajuste o tamanho do logotipo para telas muito pequenas */
@@ -301,10 +299,10 @@ nav ul li a:hover {
                 <p>Na Sonhos Assessoria, você tem o poder de personalizar cada detalhe. Crie o pacote perfeito para o tamanho e estilo da sua festa, garantindo que cada investimento traga um impacto real. E não importa a sua visão para o grande dia, nossa equipe é flexível e experiente para entregar resultados incríveis em qualquer estilo.</p>
                 <p>Estamos no coração do Rio de Janeiro, prontos para fazer acontecer. Se a nossa proposta te inspirou e você quer saber mais sobre como podemos concretizar seus planos, é fácil: Estamos prontos para responder rapidamente e apresentar uma proposta sob medida para você.</p>
                 <p>Deixe a Sonhos Assessoria transformar seus planos em uma celebração memorável e vibrante!</p>
-            </div>         
+            </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="footer-simple-container">
             <p>&copy; 2025 Sonhos Assessoria de Eventos e Cerimoniais. Todos os direitos reservados.</p>

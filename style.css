@@ -634,8 +634,6 @@ footer {
 
     .image-grid, .depoimentos-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller grid items */
-        width:50%;
-        margin:0 auto;
     }
 
     .image-item img, .depoimentos-grid .image-item img {

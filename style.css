@@ -1,0 +1,696 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color:#14374d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.interface{
+    max-width: 1280px;
+    margin:0 auto;
+    padding: 0 4%;    
+}
+
+ h1{
+    margin-bottom:50px;
+    color:white;
+    font-size: 2.5rem;
+}
+
+.titulo {
+    font-size: 2.5em;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+
+/*ESTILO DO CABEÇALHO*/
+header{
+    width:100%;
+    z-index:999999999999999;
+    padding: 10px 0;
+    position: sticky; /* Adicionado para posicionar o menu mobile */
+    background-color: white;
+}
+
+header .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logotipo img{
+    height: 60px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logotipo img:hover{
+    transform: scale(1.05);
+}
+
+/* Estilo do Menu Desktop */
+header nav.menu-desktop ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav.menu-desktop ul li a{
+    font-size: 1.1em;
+    color:#14374d;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav.menu-desktop ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+}
+
+nav.menu-desktop ul li :hover{
+   color:#cf9c7b;
+}
+
+/* Estilo do Menu Mobile */
+.btn-abrir-menu {
+    display: none; /* Oculto por padrão, só aparece em mobile */
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:#14374d;    
+}
+
+.menu-mobile {
+    background-color:#14374d;
+    position: fixed;
+    color: #f7f7f7;    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0%; /* Começa fechado */
+    height: 100vh;
+    z-index: 99999;
+    transition: .5s;
+    overflow: hidden; /* Garante que o conteúdo não vaze enquanto fechado */
+    
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%; /* Largura quando aberto */
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar-menu {
+    color: white;
+    font-size: 2.5rem;
+    padding: 20px 5%;
+    cursor: pointer;
+    text-align: right;
+}
+
+.menu-mobile nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    padding: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    color: #cf9c7b;
+}
+
+.overlay-menu {
+    background-color: #000000a6;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none; /* Oculto por padrão */
+}
+
+/* Estilo do slider */
+.slider{
+    height:100vh;
+    position:relative;
+    width:100%;
+    margin-bottom: 80px;
+}
+
+.slider .slider-container .slider-box{
+    position:absolute;
+    inset:0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.slider .slider-box img{
+    width:100%;
+    height:100vh;
+    object-fit: cover;
+}
+
+.slider .slider-box::after{
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.slider .slider-box .texto-slider{
+    position: absolute;
+    left: 10%;
+    top:30%;
+    color:#fff;
+    z-index:1;
+    width:80%;
+    max-width:600px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.slider .slider-box .texto-slider h2{
+    font-size:5rem;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.slider .slider-box .texto-slider p{
+    font-size:1rem;
+    margin-top: -20px;
+    animation: fadeInUp 1s ease-out forwards 0.5s; 
+}
+
+/* Estilo das setas */
+.setas{
+    width:100%;
+    height:100%;
+    padding: 0 4% 4%;
+    position:absolute;
+    top:0;
+    left:0;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    z-index:22222;
+}
+
+.setas button{
+    width:40px;
+    height:40px;
+    background-color: #a8a7a7;
+    border:none;
+    border-radius: 8px;
+    cursor:pointer;
+    font-size:1.2rem;
+    transition: .2s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.setas button:hover{
+    background-color:#fff;
+    transform: scale(1.1);
+}
+
+/*INÍCIO SEÇÃO SOBRE*/
+.sobre-container{
+    padding: 80px 0;
+    margin-bottom: 80px;
+}
+
+.sobre-interface{
+    max-width: 1280px;
+    margin:0 auto;
+    padding: 0 4%;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px; 
+}
+
+.sobre-content img {
+    flex: 1;
+    min-width: 350px; 
+    max-width: 550px; 
+    height: auto;
+    border-radius: 10px;
+    animation: fadeInLeft 1s ease-out forwards; 
+}
+
+.sobre-text {
+    flex: 2;
+    min-width: 300px; 
+    animation: fadeInRight 1s ease-out forwards; 
+}
+
+.sobre-text p {
+    font-size: .98em;
+    color: white;
+    padding:4px;
+}
+/*FIM SEÇÃO SOBRE*/        
+
+/*INÍCIO SEÇÃO DE FOTOS*/
+.galeria{
+    padding: 80px 0;
+    margin-bottom: 80px;
+}
+
+.galeria-container {
+    padding: 0 20px;
+}    
+
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cria colunas flexíveis de no mínimo 200px */
+    gap: 20px; /* Espaçamento entre as imagens */
+  
+}
+   
+.image-item img{
+    width:100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
+    border-radius:10px;
+    cursor:pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+}
+
+/* --- MODAL (Lightbox) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding-top: 60px;
+}
+        
+.modal-content {
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus{
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*FIM SEÇÃO DE FOTOS*/
+
+/*INICIO SEÇÃO DE DEPOIMENTOS*/ 
+
+.depoimentos {
+    padding: 80px 0;
+    
+}
+
+.depoimentos-container {
+    padding: 0 20px;
+}
+
+.depoimentos h1{
+    margin-bottom: 60px;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+    gap: 20px;
+}
+
+.depoimentos-grid .image-item img {
+    height: 200px; 
+}
+/*FIM SEÇÃO DE DEPOIMENTOS*/
+
+/*INÍCIO SEÇÃO CONTATO*/
+
+.contato {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.contato-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.contato-content{
+    max-width: 1280px;
+    margin: 50px auto;     
+    text-align: center;         
+    color:#14374d;
+    background-color: silver;
+    padding: 50px;
+    border-radius: 20px;            
+}
+
+.contato-content h2{
+    color:grey;
+    font-size:2rem;
+    margin-bottom: 50px;
+}
+
+/*--- CONFIGURAÇÃO DE POSICIONAMENTO DOS ÍCONES DE REDE SOCIAL E TAMANHO ---*/
+.icones-contato {
+    display: flex;
+    margin:50px auto;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+}  
+
+.icon-facebook{
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;           
+}
+
+.icon-instagram{
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s ease-in-out;           
+}
+
+.icon-whatsapp{
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;           
+}
+
+.icones-contato img:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+
+/*FIM SEÇÃO DE CONTATO*/
+
+/*INÍCIO SEÇÃO DE RODAPÉ*/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+/*FIM SEÇÃO DE RODAPÉ*/
+
+/*ANIMAÇÃO*/
+@keyframes animaTexto{
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        transition: 3s;
+    }
+}
+
+.slider .slider-box.ativo h2,
+.slider .slider-box.ativo p{
+    transform: translateY(60px);
+    opacity: 0;
+    animation: animaTexto .5s ease-in-out .7s forwards;
+}
+
+.slider .slider-box.ativo h2{
+    animation-delay: 1s;
+}
+
+.slider-container .slider-box.ativo{
+    opacity:1;
+    z-index:11111;
+}
+
+@keyframes animaTexto{
+     100%{           
+          transform: translateX(0);           
+          opacity: 1;
+          transition: 3s;         
+         }
+} 
+
+.sobre-container{
+    transform: translateX(-60px);
+    opacity: 0;
+    animation: animaTexto .8s ease-in-out .10s forwards;
+    margin-top: 80px;
+}
+
+
+@keyframes animaTexto{
+    100%{           
+        transform: translateY(0);           
+        opacity: 1;
+        transition: 3s;         
+        }
+} 
+
+.gallery-content {
+    transform: translateY(60px);
+    opacity: 0;
+    animation: animaTexto .5s ease-in-out .7s forwards;
+}     
+  
+
+@keyframes animaTexto{
+    100%{           
+        transform: translateY(0);           
+        opacity: 1;
+        transition: 3s;         
+        }
+} 
+
+.gallery-content {
+    transform: translateY(60px);
+    opacity: 0;
+    animation: animaTexto .5s ease-in-out .7s forwards;
+}     
+
+
+@keyframes animaTexto{
+    100%{           
+        transform: translateY(0);           
+        opacity: 1;
+        transition: 3s;         
+        }
+} 
+
+.contato-container, .icones-contato{
+    transform: translateY(60px);
+    opacity: 0;
+    animation: animaTexto .5s ease-in-out forwards; /* Ajustado para forwards */
+}
+
+.contato-container{
+    animation-delay: 0.7s; /* Ajustado para 0.7s */
+}
+
+.contato-content h1,p{
+    animation-delay: 0.9s; /* Ajustado para 0.7s */
+}
+
+.contato-content p{
+    animation-delay: 10s; /* Ajustado para 0.7s */
+}
+
+.icones-contato{
+    animation-delay: 1.2s; /* Ajustado para 1.2s */
+}    
+/*FIM ANIMAÇÃO*/
+
+/* Tablets and small desktops */
+@media screen and (max-width: 1024px) {
+    .interface {
+        padding: 0 15px;
+    }
+
+    .logotipo img {
+        height: 50px;
+    }
+
+    .menu-desktop ul {
+        gap: 20px;
+    }
+
+    .texto-slider h2 {
+        font-size: 3.5em;
+    }
+
+    .texto-slider p {
+        font-size: 1.5em;
+    }
+
+    .sobre-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .sobre-content img {
+        max-width: 80%; 
+        margin-bottom: 30px;
+    }
+}
+
+/* Mobile*/
+@media screen and (max-width: 768px) {
+    .menu-desktop {
+        display: none; 
+    }
+
+    .btn-abrir-menu {
+        display: block; 
+        font-size: 2.2em;
+        cursor: pointer;
+    }
+
+    .slider {
+        height: 450px; 
+    }
+
+    .texto-slider h2 {
+        font-size: 2.8em;
+    }
+
+    .texto-slider p {
+        font-size: 1.2em;
+    }
+
+    .setas button {
+       display:none
+    }
+
+    .sobre-container, .galeria, .depoimentos, .contato {
+        padding: 60px 0;
+    }
+
+    .titulo {
+        font-size: 2em;
+    }
+
+    .image-grid, .depoimentos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller grid items */
+        width:50%;
+        margin:0 auto;
+    }
+
+    .image-item img, .depoimentos-grid .image-item img {
+        height:300px; 
+        width:250px;
+    }
+
+    .contato-container {
+        padding: 30px;
+    }
+       .contato h2{
+        font-size:1.5em;
+    }
+
+       .contato p{
+        font-size:.9em;
+    }
+
+    .icones-contato img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Smaller mobile devices */
+@media screen and (max-width: 480px) {
+    .logotipo img {
+        height: 45px;
+    }
+
+    .slider {
+        height: 350px;
+    }
+
+    .texto-slider h2 {
+        font-size: 2.2em;
+    }
+
+    .texto-slider p {
+        font-size: 1em;
+    }
+
+    .titulo {
+        font-size: 1.8em;
+    }
+
+    .sobre-text p {
+        font-size: 1em;
+    }
+
+    .image-grid, .depoimentos-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .image-item img, .depoimentos-grid .image-item img {
+        height: 220px;
+    }
+}

@@ -7,7 +7,6 @@
 
 body{
     background-color:#14374d;
-    width:100vw;
 }
 
 html {
@@ -15,7 +14,7 @@ html {
 }
 
 .interface{
-    max-width: 1200px;
+    width:90%;
     margin:0 auto;
     padding: 0 20px;    
 }
@@ -259,7 +258,7 @@ nav ul li a:hover {
 }
 
 .sobre-interface{
-    max-width: 1280px;
+    width: 100%;
     margin:0 auto;
     padding: 0 4%;
 }

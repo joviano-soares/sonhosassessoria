@@ -14,8 +14,7 @@ html {
 }
 
 .interface{
-    width:90%;
-    margin:0 auto;
+    width:100%;
     padding: 0 20px;    
 }
 
@@ -414,7 +413,7 @@ nav ul li a:hover {
 }
 
 .contato-content{
-    max-width: 1280px;
+    width: 100%;
     margin: 50px auto;     
     text-align: center;         
     color:#14374d;

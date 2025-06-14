@@ -14,9 +14,9 @@ html {
 }
 
 .interface{
-    width: 100%;
+    max-width: 1200px;
     margin:0 auto;
-    padding: 0 4%;    
+    padding: 0 20px;    
 }
 
  h1{
@@ -171,6 +171,7 @@ nav ul li a:hover {
     height:100vh;
     position:relative;
     width:100%;
+    overflow:hidden;
     margin-bottom: 80px;
 }
 
@@ -185,6 +186,7 @@ nav ul li a:hover {
     width:100%;
     height:100vh;
     object-fit: cover;
+    filter: brightness(70%);
 }
 
 .slider .slider-box::after{
@@ -308,19 +310,29 @@ nav ul li a:hover {
     gap: 20px; /* Espaçamento entre as imagens */
   
 }
-   
-.image-item img{
-    width:100%;
-    height: 100%;
-    object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
-    border-radius:10px;
-    cursor:pointer;
+
+.image-item {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
     position: relative;
     transition: transform 0.3s ease-in-out;
+}
+   
+.image-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent grid */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .image-item:hover {
     transform: translateY(-5px);
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
 }
 
 /* --- MODAL (Lightbox) --- */
@@ -364,7 +376,7 @@ nav ul li a:hover {
 
 .depoimentos {
     padding: 80px 0;
-    
+    margin-bottom: 80px;
 }
 
 .depoimentos-container {
@@ -389,7 +401,7 @@ nav ul li a:hover {
 /*INÍCIO SEÇÃO CONTATO*/
 
 .contato {
-    padding: 30px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -414,7 +426,12 @@ nav ul li a:hover {
 .contato-content h2{
     color:grey;
     font-size:2rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.contato-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
 }
 
 /*--- CONFIGURAÇÃO DE POSICIONAMENTO DOS ÍCONES DE REDE SOCIAL E TAMANHO ---*/
@@ -560,7 +577,37 @@ footer {
 
 .icones-contato{
     animation-delay: 1.2s; /* Ajustado para 1.2s */
-}    
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
 /*FIM ANIMAÇÃO*/
 
 /* Tablets and small desktops */
@@ -609,7 +656,7 @@ footer {
     }
 
     .slider {
-        height: 100vh; 
+        height: 450px; 
     }
 
     .texto-slider h2 {
@@ -633,25 +680,18 @@ footer {
     }
 
     .image-grid, .depoimentos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller grid items */
+       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .image-item img, .depoimentos-grid .image-item img {
         height:300px; 
-        width:250px;
+        
     }
 
     .contato-container {
         padding: 30px;
     }
-       .contato h2{
-        font-size:1.5em;
-    }
-
-       .contato p{
-        font-size:.9em;
-    }
-
+      
     .icones-contato img {
         width: 40px;
         height: 40px;

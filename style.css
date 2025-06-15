@@ -14,7 +14,8 @@ html {
 }
 
 .interface{
-    width:100%;
+    max-width: 1280px;
+    margin:0 auto;
     padding: 0 20px;    
 }
 
@@ -185,7 +186,7 @@ nav ul li a:hover {
     width:100%;
     height:100vh;
     object-fit: cover;
-    filter: brightness(70%);
+   
 }
 
 .slider .slider-box::after{
@@ -257,7 +258,7 @@ nav ul li a:hover {
 }
 
 .sobre-interface{
-    width: 100%;
+    max-width: 1280px;
     margin:0 auto;
     padding: 0 4%;
 }
@@ -397,87 +398,93 @@ nav ul li a:hover {
 }
 /*FIM SEÇÃO DE DEPOIMENTOS*/
 
-/*INÍCIO SEÇÃO CONTATO*/
+/*INÍCIO SEÇÃO DE CONTATO E RODAPÉ*/
 
-.contato {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.contato-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 10px;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-.contato-content{
-    width: 100%;
-    margin: 50px auto;     
-    text-align: center;         
-    color:#14374d;
-    background-color: silver;
-    padding: 50px;
-    border-radius: 20px;            
-}
-
-.contato-content h2{
-    color:grey;
-    font-size:2rem;
-    margin-bottom: 20px;
-}
-
-.contato-content p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-/*--- CONFIGURAÇÃO DE POSICIONAMENTO DOS ÍCONES DE REDE SOCIAL E TAMANHO ---*/
-.icones-contato {
-    display: flex;
-    margin:50px auto;
-    justify-content: center;
-    align-items: center;
-    gap:30px;
-}  
-
-.icon-facebook{
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease-in-out;           
-}
-
-.icon-instagram{
-    width: 55px;
-    height: 55px;
-    transition: transform 0.3s ease-in-out;           
-}
-
-.icon-whatsapp{
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease-in-out;           
-}
-
-.icones-contato img:hover {
-    transform: scale(1.15) rotate(5deg);
-}
+        footer {
+            width: 100%;
+            background-color: #333; /* Cor principal do cabeçalho mobile */
+            color: #f7f7f7; /* Cor do texto claro */
+            padding: 40px 20px;
+        }
 
 
-/*FIM SEÇÃO DE CONTATO*/
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid; /* Usando Grid para o layout do rodapé */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas adaptáveis */
+            gap: 30px; /* Espaçamento entre as seções */
+            text-align: left; /* Alinhar texto à esquerda nas seções */
+        }
 
-/*INÍCIO SEÇÃO DE RODAPÉ*/
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0;
-    font-size: 0.9em;
-}
+        .footer-section {
+            padding: 10px;
+        }
+
+        .footer-section h3 {
+            color: #cf9c7b; /* Cor de destaque do menu */
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #f7f7f7;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #cf9c7b;
+        }
+
+        .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .footer-social-icons a {
+            color: #f7f7f7;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            color: #cf9c7b;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom-bar {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória */
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+       
 /*FIM SEÇÃO DE RODAPÉ*/
 
 /*ANIMAÇÃO*/
+
 @keyframes animaTexto{
     100%{
         transform: translateY(0);
@@ -644,13 +651,18 @@ footer {
 
 /* Mobile*/
 @media screen and (max-width: 768px) {
-    .menu-desktop {
-        display: none; 
+
+    header .interface {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 5%;
     }
+    header nav.menu-desktop {
+                display: none;
+            }
 
     .btn-abrir-menu {
-        display: block; 
-        font-size: 2.2em;
+        display: block;
         cursor: pointer;
     }
 
@@ -683,8 +695,7 @@ footer {
     }
 
     .image-item img, .depoimentos-grid .image-item img {
-        height:300px; 
-        
+        height:300px;         
     }
 
     .contato-container {
@@ -695,6 +706,78 @@ footer {
         width: 40px;
         height: 40px;
     }
+
+   .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-social-icons {
+        justify-content: center;
+    }
+
+    footer{
+        padding: 40px 15px 20px;
+    }
 }
 
+/* Smaller mobile devices */
+@media screen and (max-width: 480px){
 
+    header .logotipo img {
+        width: 6rem; /* Ajuste para o logo em mobile */
+    }   
+
+    .btn-abrir-menu {
+        font-size: 2.5rem;
+    }
+
+    .menu-mobile.abrir-menu {
+        width: 90%; /* Ocupa mais largura em celulares */
+    }
+
+    .menu-mobile .btn-fechar-menu {
+        font-size: 2.5rem;
+        padding: 15px 5%;
+    }
+
+    .menu-mobile nav ul li {
+        padding: 12px 0;
+    }
+
+    .menu-mobile nav ul li a {
+        font-size: 1rem;
+    }    
+
+    .slider {
+        height: 350px;
+    }
+
+    .texto-slider h2 {
+        font-size: 2.2em;
+    }
+
+    .texto-slider p {
+        font-size: 1em;
+    }
+
+    .titulo {
+        font-size: 1.8em;
+    }
+
+    .sobre-text p {
+        font-size: 1em;
+    }
+
+    .image-grid, .depoimentos-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .image-item img, .depoimentos-grid .image-item img {
+        height: 220px;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+}

@@ -777,7 +777,11 @@ nav ul li a:hover {
         height: 220px;
     }
 
-    .footer-section h3 {
-        font-size: 1.1rem;
+       .footer-section h3 {
+        font-size: 1em;
+    }
+
+     .footer-section p {
+        font-size: .9em;
     }
 }
